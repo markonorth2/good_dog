@@ -13,13 +13,14 @@ class GoodDog
   end
 
   def change_info(n, h, w)
-    @name = n
-    @height = h
-    @weight = w
+    # To disambiguate from creating a local variable, we need to use self.name= to let Ruby know that we're calling a method. 
+    self.name = n
+    self.height = h
+    self.weight = w
   end 
 
   def info
-    "#{name} weighs #{weight} and is #{height} tall."
+    "#{self.name} weighs #{self.weight} and is #{self.height} tall."
   end
 
 end
