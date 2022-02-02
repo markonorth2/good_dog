@@ -1,21 +1,11 @@
 class GoodDog
+  attr_accessor :name
   def initialize(name)
     @name = name
   end
 
   def speak
     "#{@name} says Arf!"
-  end
-
-  def name # This was renamed from "get_name"
-    @name
-    #same result 
-    # "#{@name}"
-  end
-  
-
-  def name=(n) # This was renamed from "set_name="
-    @name = n
   end
 
 end
