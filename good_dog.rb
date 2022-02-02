@@ -7,24 +7,24 @@ class GoodDog
     "#{@name} says Arf!"
   end
 
-  def get_name
+  def name # This was renamed from "get_name"
     @name
     #same result 
     # "#{@name}"
   end
   
 
-  def set_name=(name)
-    @name = name
+  def name=(n) # This was renamed from "set_name="
+    @name = n
   end
 
 end
 
 sparky = GoodDog.new("Sparky")
 puts sparky.speak
-puts sparky.get_name
-sparky.set_name = "Spartacus"
-puts sparky.get_name
+puts sparky.name
+sparky.name = "Spartacus"
+puts sparky.name
 
 fido = GoodDog.new("Fido")
 puts fido.speak 
