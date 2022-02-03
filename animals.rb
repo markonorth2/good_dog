@@ -1,4 +1,11 @@
-class GoodDog
+class Animal
+  def speak
+    "#{name} says Hello!"
+  end
+end
+
+
+class GoodDog < Animal
   @@number_of_dogs = 0
   attr_accessor :name, :height, :weight
   def initialize(n, h, w)
@@ -8,11 +15,7 @@ class GoodDog
     @@number_of_dogs += 1
   end
 
-  def speak
-    "#{name} says Arf!"
-    # By removing the @ symbol, we're now calling the instance method, rather than the instance variable. 
-    # Technically, you could just reference the instance variable, but it's generally a good idea to call the getter method instead.
-  end
+  
 
   def change_info(n, h, w)
     # To disambiguate from creating a local variable, we need to use self.name= to let Ruby know that we're calling a method. 
@@ -32,14 +35,18 @@ class GoodDog
 
 end
 
-# sparky = GoodDog.new("Sparky")
-# puts sparky.speak
-# puts sparky.name
-# sparky.name = "Spartacus"
-# puts sparky.name
+class Cat < Animal
+  attr_accessor :name
+  def initialize(n)
+    @name = n
+  end
+end
 
-# fido = GoodDog.new("Fido")
-# puts fido.speak 
+paws = Cat.new("Paws")
+sparky = GoodDog.new('Sparky', "20 inches", "5 lbs")
+
+puts sparky.speak           # => Hello!
+puts paws.speak             # => Hello!
 
 rogers = GoodDog.new('Rogers', '12 inches', '10 lbs')
 puts rogers.info      # => Rogers weighs 10 lbs and is 12 inches tall.
