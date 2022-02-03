@@ -1,4 +1,8 @@
 class Animal
+  def initialize(alt_name)
+    @alt_name = alt_name
+  end
+    
   def speak
     "#{name} says Hello!"
   end
@@ -38,6 +42,7 @@ end
 class Cat < Animal
   attr_accessor :name
   def initialize(n)
+    super #set the @alt_name in the Animal Superclass as the arugment passed in to the Cat class
     @name = n
   end
 end
@@ -57,4 +62,4 @@ puts rogers.info      # => Spartacus weighs 45 lbs and is 24 inches tall.
 bell = GoodDog.new('Bell', '14 inches', '15 lbs')
 puts bell.info      # => Rogers weighs 10 lbs and is 12 inches tall.
 
-
+p paws # <Cat:0x0000561c20edeb98 @alt_name="Paws", @name="Paws">
