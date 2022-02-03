@@ -21,17 +21,12 @@ class MyCar
     puts "Your new #{color} paint job looks great!"
   end
 
-  
-
-
-
-
 end 
 
 honda = MyCar.new(2019, "gray", "Civic") 
 honda.info
-honda.speed_up(5)
-honda.speed_up(10)
+honda.speed_up(Integer(gets.chomp))
+honda.speed_up(Integer(gets.chomp))
 honda.spray_paint("blue")
 honda.info
 
